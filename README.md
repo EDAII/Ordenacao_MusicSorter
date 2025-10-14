@@ -1,36 +1,125 @@
-# Repositório Template
-Repositório de Template para os projetos da disciplina 
-```
-Nome do Repositório (Apague este tópico)
-  O nome do repositório deve seguir o padrão <TemaProjeto>_<Nome Projeto>.
-  O nome do projeto deve representar o que foi implementado no mesmo (Ex:
-  Game xyz, Implementações Otimizadas de Algoritmos, Aplicativo xpto)
+# 🎵 MusicSorter – Sistema de Ordenação de Músicas
 
-Os temas de projeto são:  
- - Busca - Algoritmos de busca  
- - Ord_quad - Algoritmos de ordenação O(n²)  
- - Ord_nlogn - Algoritmos de ordenação O(n*log(n))  
- - Arv - Algoritmos de manipulação de Árvores  
- - Grafo - Algoritmos de manipulação de Grafos  
- 
- Ex: Busca_ConcorrenteDaGoogle
-```
-## Alunos  
-| Matrícula | Nome |  
-|-----------------------|---------------------|  
-| xx/xxxxxxx | xxxx xxxx xxxxx |  
-| xx/xxxxxxx | xxxx xxxx xxxxx |  
-## Descrição do projeto
-Aqui você deve dizer o objetivo deste projeto e o que realmente foi feito neste repositório.
-## Guia de instalação
-Aqui devem estar descritas as dependências do projeto (versões de linguagens e ferramentas) e as instruções necessárias para executar o projeto. 
-### Dependências do projeto
-### Como executar o projeto
-## Capturas de tela
-Neste tópico você deve adicionar imagens do funcionamento do projeto.  
- - As imagens devem ser salvas no repositório.
- - Imagens salvas em domínios eternos tendem a ficar indisponíveis e devem ser evitadas.   
-## Conclusões
-Aqui você diz se o algoritmo utilizado foi útil, se tem limitações, etc.
-## Referências
-Caso tenha utilizado algum agoritmo como base, citar o mesmo devidamente para  evitar quaisquer denuncias de plágio.
+## Aluno
+
+| Matrícula | Nome                     |
+| --------- | ------------------------ |
+| 202017521 | Algusto Rodrigues Caldas |
+
+* * *
+
+## Descrição do Projeto
+
+O **MusicSorter** é um projeto desenvolvido para demonstrar o funcionamento de **algoritmos de ordenação clássicos** (Bubble Sort, Insertion Sort e Quick Sort) aplicados em uma base de músicas.
+
+Cada música possui os seguintes atributos:
+
+* **Título**
+* **Artista**
+*  **Duração**
+
+O usuário pode escolher qual algoritmo deseja utilizar e qual atributo será usado como critério de ordenação, além de visualizar o **tempo de execução** de cada método.
+
+* * *
+
+## Funcionalidades
+
+* Inserir novas músicas na base.
+* Listar todas as músicas.
+* Ordenar por **título**, **artista** ou **duração**.
+* Escolher o algoritmo:
+  *  Bubble Sort
+  *  Insertion Sort
+  *  Quick Sort
+* Comparar o **tempo de execução** entre os algoritmos.
+
+* * *
+
+## Conceitos de Estrutura de Dados aplicados
+
+* Estruturas de dados: listas e objetos.
+* Implementação manual de algoritmos clássicos de ordenação.
+* Análise de tempo de execução (`time.perf_counter()`).
+* Comparação prática de desempenho.
+
+* * *
+
+## Guia de Instalação
+
+### Requisitos
+
+* Python 3.10 ou superior
+
+###  Como Executar o Projeto
+
+1. Clone o repositório:
+  
+      git clone https://github.com/EDAII/Ordenacao_MusicSorter.git
+  
+2. Acesse o diretório:
+  
+      cd Ordenacao_MusicSorter
+  
+3. Execute o programa:
+  
+      python main.py
+  
+
+* * *
+
+## Exemplo de Execução
+
+    === MusicSorter ===
+    1. Inserir música
+    2. Listar músicas
+    3. Ordenar músicas
+    4. Sair
+    Escolha uma opção: 3
+    
+    Ordenar por:
+    1. Título
+    2. Artista
+    3. Duração
+    Critério: 1
+    
+    Escolha o algoritmo:
+    1. Bubble Sort
+    2. Insertion Sort
+    3. Quick Sort
+    Algoritmo: 3
+    
+    Ordenação concluída em 0.00031 segundos.
+
+* * *
+
+## Objetivos de Aprendizado
+
+* Compreender o funcionamento de diferentes algoritmos de ordenação.
+* Aplicar conceitos de análise de complexidade.
+* Comparar empiricamente o desempenho entre métodos distintos.
+* Desenvolver raciocínio lógico e modularização em Python.
+
+* * *
+
+## Disciplina
+
+**Estrutura de Dados — Engenharia de Software – Universidade de Brasília (FGA)**
+
+* * *
+
+##  Apresentação do Projeto
+
+> *(Link do vídeo quando disponível)*
+
+* * *
+
+## Estrutura de Arquivos
+
+    Ordenacao_MusicSorter/
+    │
+    ├── main.py                  # Código principal com menu e ordenações
+    ├── musicas_base.py          # Base de músicas iniciais
+    ├── README.md                # Documentação do projeto
+    └── assets/                  # Imagens ou vídeos complementares (opcional)
+
+* * *
