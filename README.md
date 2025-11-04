@@ -73,7 +73,7 @@ O usuário pode escolher o algoritmo e o critério de ordenação (título, arti
 
 ### Apresentação
 
-[Thumbnail do Vídeo](https://youtu.be/7b--P5EjV0c?si=LMSpdMBPOoqIR7CS)
+[![Thumbnail do Vídeo](assets/thumb.png)](https://youtu.be/7b--P5EjV0c?si=LMSpdMBPOoqIR7CS)
 
 ### Aplicação em Execução
 
