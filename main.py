@@ -1,9 +1,7 @@
-# main.py
 from musicas_base import musicas_iniciais
 import time
-import copy
 
-# Helper to convert mm:ss to seconds (int)
+# Função auxiliar para converter o formato mm:ss em segundos (int)
 def mmss_to_seconds(mmss):
     try:
         parts = mmss.strip().split(':')
@@ -13,15 +11,15 @@ def mmss_to_seconds(mmss):
     except:
         return 0
 
-# Display formatting
+# Formatação de exibição das músicas
 def format_musica(m):
     return f"{m['titulo']} - {m['artista']} ({m['duracao']})"
 
-# Sorting algorithms implemented to sort list of dicts by key function
+# Algoritmos de ordenação implementados para ordenar listas de dicionários com base em uma função de chave
 
 def bubble_sort(arr, key_func):
     n = len(arr)
-    a = arr[:]  # work on a copy
+    a = arr[:]  # trabalha em uma cópia da lista original
     swaps = 0
     comps = 0
     for i in range(n):
@@ -53,11 +51,13 @@ def insertion_sort(arr, key_func):
 def quick_sort(arr, key_func):
     a = arr[:]
     comps = {'count': 0}
+
     def _qs(low, high):
         if low < high:
             p = partition(low, high)
             _qs(low, p-1)
             _qs(p+1, high)
+
     def partition(low, high):
         pivot = key_func(a[high])
         i = low - 1
@@ -68,17 +68,18 @@ def quick_sort(arr, key_func):
                 a[i], a[j] = a[j], a[i]
         a[i+1], a[high] = a[high], a[i+1]
         return i+1
+
     _qs(0, len(a)-1)
     return a, comps['count'], None
 
-# Timing wrapper
+# Função para medir o tempo de execução da ordenação
 def timed_sort(func, arr, key_func):
     start = time.perf_counter()
     sorted_arr, comps, aux = func(arr, key_func)
     end = time.perf_counter()
     return sorted_arr, comps, aux, end - start
 
-# Key function factory
+# Fábrica de funções de chave (key functions)
 def key_by(field):
     if field == 'titulo':
         return lambda m: m['titulo'].lower()
@@ -88,8 +89,8 @@ def key_by(field):
         return lambda m: mmss_to_seconds(m['duracao'])
     return lambda m: m['titulo'].lower()
 
-# Menu functions
-musicas = [dict(m) for m in musicas_iniciais]  # working copy
+# Funções do menu
+musicas = [dict(m) for m in musicas_iniciais]  # cria uma cópia de trabalho da lista inicial
 
 def listar_musicas(lista=None, limit=20):
     if lista is None:
@@ -106,7 +107,7 @@ def inserir_musica():
     titulo = input("Título: ").strip()
     artista = input("Artista: ").strip()
     duracao = input("Duração (mm:ss): ").strip()
-    # basic validation for duration
+    # Validação básica do formato da duração
     if ':' not in duracao:
         print("Formato de duração inválido. Use mm:ss\n")
         return
@@ -146,10 +147,10 @@ def comparar_todos():
     funcs = [('Bubble', bubble_sort), ('Insertion', insertion_sort), ('Quick', quick_sort)]
     results = []
     for name, func in funcs:
-        # use a fresh copy for each
+        # usa uma cópia nova da lista para cada execução
         sorted_arr, comps, aux, elapsed = timed_sort(func, musicas, keyfunc)
         results.append((name, elapsed, comps))
-        print(f"{name}: {elapsed:.6f}s (comparisons: {comps})")
+        print(f"{name}: {elapsed:.6f}s (comparações: {comps})")
     print()
 
 def main():
